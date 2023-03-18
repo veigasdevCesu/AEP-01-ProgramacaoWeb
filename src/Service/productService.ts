@@ -35,6 +35,17 @@ class ProductService {
         return stockProducts
     }
 
+    async getTotalValue() {
+        const productList = await this.listProducts()
+
+        const totalValue = productList.reduce((acc, item) => {
+            return acc += (item.preco *= item.qtde)
+        }, 0)
+
+        return totalValue.toFixed(2)
+
+    }
+
 }
 
 export default new ProductService()

@@ -25,6 +25,14 @@ class ProductController {
         return res.status(200).send(productStock)
     }
 
+    async value(req: Request, res: Response) {
+        const valueStock = await productService.getTotalValue()
+
+        console.log(valueStock)
+
+        return res.status(200).sendStatus(valueStock)
+    }
+
 }
 
 export default new ProductController()

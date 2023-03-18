@@ -19,6 +19,8 @@ routes.get('/products', productController.list)
 
 routes.get('/products-stock', productController.stck)
 
+routes.get('/products-value', productController.value)
+
 //exportando a constante routes
 export { routes } //não instanciado = export (ao invés de export default)
 
